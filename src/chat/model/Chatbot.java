@@ -14,6 +14,7 @@ public class Chatbot
 	private ArrayList<String> politicalTopicList;
 	private String userName;
 	private String content;
+	public String KeyboardMashChecker;
 	
 	/**
 	 * Creates an instance of the Chatbot with the supplied username.
@@ -23,6 +24,7 @@ public class Chatbot
 	{
 		this.memesList = new ArrayList<String>();
 		this.userName = new String(userName);
+		this.content = new String("anime guys");
 		
 	}
 	
@@ -131,4 +133,23 @@ public class Chatbot
 		
 	}
 
+	public boolean keyboardMashChecker(String string)
+	{
+		return false;
+	}
+
+	public boolean inputHTMLChecker(String string)
+	{
+		return false;
+	}
+
+	public boolean twitterChecker(String string)
+	{
+		return false;
+	}
+
+	public boolean quitChecker(String string)
+	{
+		return false;
+	}
 }

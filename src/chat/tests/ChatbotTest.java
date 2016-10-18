@@ -101,7 +101,7 @@ public class ChatbotTest
 	{
 		assertTrue("MemeList Size check", sampleBot.getMemesList().size() > 17);
 		assertTrue("Meme Topic check", sampleBot.getMemesList().contains("doge"));
-		assertFalse("Meme Topic check", sampleBot.getMemesList().contains("dog"));
+		assertTrue("Meme Topic check", sampleBot.getMemesList().contains("doggo"));
 		assertTrue("Meme Topic check", sampleBot.getMemesList().contains("cute animals"));
 		assertTrue("Meme Topic check", sampleBot.getMemesList().contains("cute animals"));
 		assertTrue("Meme Topic check", sampleBot.getMemesList().contains("grumpy cat"));
@@ -109,6 +109,16 @@ public class ChatbotTest
 		assertTrue("Meme Topic check", sampleBot.getMemesList().contains("willy wonka"));
 		assertTrue("Meme Topic check", sampleBot.getMemesList().contains("harambe"));
 		assertTrue("Meme Topic check", sampleBot.getMemesList().contains("john cena"));
+		assertTrue("Meme Topic check", sampleBot.getMemesList().contains("Haha Long Boy"));
+		assertTrue("Meme Topic check", sampleBot.getMemesList().contains("Pepe"));
+		assertTrue("Meme Topic check", sampleBot.getMemesList().contains("Spell ICUP"));
+		assertTrue("Meme Topic check", sampleBot.getMemesList().contains("Haha Long Boy"));
+		assertTrue("Meme Topic check", sampleBot.getMemesList().contains("Haha Long Boy"));
+		assertTrue("Meme Topic check", sampleBot.getMemesList().contains("Haha Long Boy"));
+		assertTrue("Meme Topic check", sampleBot.getMemesList().contains("Haha Long Boy"));
+		assertTrue("Meme Topic check", sampleBot.getMemesList().contains("Haha Long Boy"));
+		assertTrue("Meme Topic check", sampleBot.getMemesList().contains("Haha Long Boy"));
+		
 
 	}
 	

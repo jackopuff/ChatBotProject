@@ -10,10 +10,16 @@ public class ChatController
 		public ChatController()
 		{
 			stupidBot = new Chatbot("Andoo Slimer");
+			chatView = new ChatViewer();
 		}
 		
 		public void start()
 		{
+			String response = "talking to you";
 			
+			while(stupidBot.lengthChecker(response))
+			{
+				response = chatView.collectResponse("What to talk about to day?");
+			}
 		}
 }
