@@ -24,8 +24,10 @@ public class Chatbot
 	{
 		this.memesList = new ArrayList<String>();
 		this.userName = new String(userName);
-		this.content = new String("anime guys");
-		
+		this.content = new String("dem bois");
+		this.politicalTopicList = new ArrayList<String>();
+		this.buildMemesList();
+		buildPoliticalTopicsList();
 	}
 	
 	private void buildMemesList()
@@ -37,7 +39,7 @@ public class Chatbot
 	{
 		
 	}
-	
+		
 	/**
 	 * Checks the length of the supplied string. Returns false if the supplied String is empty or null,
 	 * otherwise returns true. 
@@ -63,7 +65,12 @@ public class Chatbot
 	 */
 	public boolean contentChecker(String currentInput)
 	{
-		return false;
+		boolean hasContent=false;
+		if (currentInput.contains("boi") || currentInput.contains("boy") || currentInput.contains("bois0"))
+		{
+			hasContent = true;
+		}
+		return hasContent;
 	}
 	
 	/**

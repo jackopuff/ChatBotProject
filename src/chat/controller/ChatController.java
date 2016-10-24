@@ -22,4 +22,5 @@ public class ChatController
 				response = chatView.collectResponse("What to talk about to day?");
 			}
 		}
+
 }
