@@ -1,5 +1,4 @@
 package chat.model;
-
 import java.util.ArrayList;
 
 /**
@@ -92,8 +91,18 @@ public class Chatbot
 	 * @return Whether the supplied String is a recognized meme.
 	 */
 	public boolean memeChecker(String currentInput)
-	{
-		return false;
+	{		
+		boolean hasMemes=false;
+		
+		for (int index = 0; index< memesList.size(); index++)
+		{
+			String memes=(memesList.get(insdex));
+			if (currentInput.equalsIgnoreCase(memes))
+				{
+				hasMemes=true;
+				}
+		}
+		return hasMemes;
 	}
 	
 	/**
