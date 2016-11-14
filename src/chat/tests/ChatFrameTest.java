@@ -10,12 +10,12 @@ import chat.controller.*;
 
 public class ChatFrameTest
 {
-	private ChatFrame baseFrame;
+	private ChatPanel baseFrame;
 
 	@Before
 	public void setUp() throws Exception
 	{
-		baseFrame = new ChatFrame(new ChatController());
+		baseFrame = new ChatPanel(new ChatController());
 	}
 
 	@After

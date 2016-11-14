@@ -31,7 +31,7 @@ public class Chatbot
 	
 	private void buildMemesList()
 	{
-		
+	memesList.add("boi");	
 	}
 	
 	private void buildPoliticalTopicsList()
@@ -96,8 +96,8 @@ public class Chatbot
 		
 		for (int index = 0; index< memesList.size(); index++)
 		{
-			String memes=(memesList.get(insdex));
-			if (currentInput.equalsIgnoreCase(memes))
+			String memes=(memesList.get(index));
+			if (currentInput.contains(memes))
 				{
 				hasMemes=true;
 				}
