@@ -1,5 +1,6 @@
 package chat.controller;
 import chat.view.*;
+import chat.view.ChatPanel;
 import chat.model.Chatbot;
 import chat.view.ChatViewer;
 public class ChatController
@@ -7,6 +8,7 @@ public class ChatController
 		private Chatbot stupidBot;
 		private ChatViewer chatView;
 		private ChatPanel appFrame;
+		private ChatFrame baseFrame;
 		public ChatController()
 		{
 			this.appFrame = new ChatPanel(this);
@@ -24,7 +26,7 @@ public class ChatController
 				response = chatView.collectResponse("Oh, you are interested in "+response);
 			}
 		}
-		private String useChatbotCheckers(String input)
+		public String useChatbotCheckers(String input)
 		{
 			String answer= "";
 			if(stupidBot.contentChecker(input))
@@ -35,6 +37,10 @@ public class ChatController
 			{
 				answer +="\nMeme machine\n";
 			}
+			if(stupidBot.politicalTopicChecker(input))
+			{
+				answer += "\nOh, you're in interested in politics\n";
+			}
 			if(input.length() == 0)
 			{
 				answer +="Sorry, I don't  about "+ input;
@@ -42,5 +48,6 @@ public class ChatController
 			
 			return answer;		
 		}
+
 
 }

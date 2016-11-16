@@ -1,4 +1,7 @@
 package chat.model;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import java.util.ArrayList;
 
 /**
@@ -31,12 +34,48 @@ public class Chatbot
 	
 	private void buildMemesList()
 	{
-	memesList.add("boi");	
+	memesList.add("boi");
+	memesList.add("doge");
+	memesList.add("doggo");
+	memesList.add("Pawn Stars");
+	memesList.add("Bee Movie");
+	memesList.add("grumpy cat");
+	memesList.add("dat boi");
+	memesList.add("willy wonka");
+	memesList.add("harambe");
+	memesList.add("john cena");
+	memesList.add("Haha Long Boy");
+	memesList.add("Pepe");
+	memesList.add("Spell ICUP");
+	memesList.add("Haha Long Boy");
+	memesList.add("Two number 9's");
+	memesList.add("Bad Luck Brian");
+	memesList.add("Bionicles");
+	memesList.add("Spooky Skeletons");
+	memesList.add("Baneposting");
 	}
 	
 	private void buildPoliticalTopicsList()
 	{
-		
+	
+	politicalTopicList.add("Democrat");
+	politicalTopicList.add("Republican");
+	politicalTopicList.add("11/4/16");
+	politicalTopicList.add("11/8/16");
+	politicalTopicList.add("republican");
+	politicalTopicList.add("democrat");				
+	politicalTopicList.add("liberal");
+	politicalTopicList.add("conservative");
+	politicalTopicList.add("Clinton");
+	politicalTopicList.add("Trump");
+	politicalTopicList.add("Kaine");
+	politicalTopicList.add("Pence");
+	politicalTopicList.add("Stein");
+	politicalTopicList.add("Johnson");
+	politicalTopicList.add("Vermin Supreme");
+	politicalTopicList.add("Bernie Sanders");
+	politicalTopicList.add("Jeb Bush");
+	politicalTopicList.add("election");	
 	}
 		
 	/**
@@ -80,8 +119,17 @@ public class Chatbot
 	 */
 	public boolean politicalTopicChecker(String currentInput)
 	{
-		/* loop, if get(), .equals (ignore case for memes)*/
-		return false;
+		boolean hasPolitics=false;
+		
+		for (int index = 0; index< politicalTopicList.size(); index++)
+		{
+			String politics=(politicalTopicList.get(index));
+			if (currentInput.contains(politics))
+				{
+				hasPolitics=true;
+				}
+		}
+		return hasPolitics;
 	}
 	
 	
@@ -97,7 +145,7 @@ public class Chatbot
 		for (int index = 0; index< memesList.size(); index++)
 		{
 			String memes=(memesList.get(index));
-			if (currentInput.contains(memes))
+			if (currentInput.toLowerCase().contains(memes.toLowerCase()))
 				{
 				hasMemes=true;
 				}

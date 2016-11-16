@@ -28,6 +28,15 @@ public class ChatPanel extends JPanel
 		setupPanel();
 		setupLayout();
 		setupListeners();
+		setupChatDisplay();
+	}
+	private void setupChatDisplay()
+	{
+		chatDisplay.setEditable(false);
+		chatDisplay.setEnabled(false);
+		chatDisplay.setLineWrap(true);
+		chatDisplay.setWrapStyleWord(true);
+		chatDisplay.setVisible(true);
 	}
 	private void setupPanel()
 	{
@@ -48,7 +57,17 @@ public class ChatPanel extends JPanel
 	}
 	private void setupListeners()
 	{
-		
+		chatButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String userWords = chatField.getText();
+				String botResponse = baseController.useChatbotCheckers(userWords);
+				
+				chatDisplay.setText("You said: "+ userWords + "\n" + "Chatbot said: " +botResponse);
+				chatField.setText("");
+			}
+		});
 	}
 	
 }
