@@ -29,6 +29,10 @@ public class ChatController
 		public String useChatbotCheckers(String input)
 		{
 			String answer= "";
+			if(!stupidBot.quitChecker(input))
+			{
+			
+			
 			if(stupidBot.contentChecker(input))
 			{
 				answer += "\nYou know my special secret\n";
@@ -45,8 +49,23 @@ public class ChatController
 			{
 				answer +="Sorry, I don't  about "+ input;
 			}
-			
+			int canBeRandom = (int)(Math.random()*7);
+			if (canBeRandom % 7 == 0)
+			{
+				answer += randomTopicGenerator();
+			}
+			}
+			else
+			{
+				chatView.displayMessage("Thank you for chatting with me :D");
+			}
 			return answer;		
+		}
+		
+		private String randomTopicGenerator()
+		{
+			String randomTopic = "";
+			return randomTopic;
 		}
 
 

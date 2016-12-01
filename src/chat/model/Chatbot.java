@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class Chatbot
 {
 	private ArrayList<String> memesList;
+	private ArrayList<String> HTMLList;
 	private ArrayList<String> politicalTopicList;
 	private String userName;
 	private String content;
@@ -28,10 +29,22 @@ public class Chatbot
 		this.userName = new String(userName);
 		this.content = new String("boi");
 		this.politicalTopicList = new ArrayList<String>();
+		this.HTMLList = new ArrayList<String>();
+		this.buildHTMLList();
 		this.buildMemesList();
 		buildPoliticalTopicsList();
 	}
-	
+	private void buildHTMLList()
+	{
+		HTMLList.add("<>");
+		HTMLList.add("< >");
+		HTMLList.add("<B>  </B>");
+		HTMLList.add("<B>  ");
+		HTMLList.add("<I> sdadas </i>");
+		HTMLList.add("<P>");
+		HTMLList.add("<A HREF=\"sdfs.html\"> </a>");
+		HTMLList.add("<A HREF> </a>");
+	}
 	private void buildMemesList()
 	{
 	memesList.add("boi");
@@ -203,9 +216,19 @@ public class Chatbot
 		return false;
 	}
 
-	public boolean inputHTMLChecker(String string)
+	public boolean inputHTMLChecker(String currentInput)
 	{
-		return false;
+		boolean hasHTML=false;
+		
+		for (int index = 0; index< HTMLList.size(); index++)
+		{
+			String memes=(memesList.get(index));
+			if (currentInput.contains(memes.toLowerCase()))
+				{
+				hasHTML=true;
+				}
+		}
+		return hasHTML;
 	}
 
 	public boolean twitterChecker(String string)
@@ -213,8 +236,13 @@ public class Chatbot
 		return false;
 	}
 
-	public boolean quitChecker(String string)
+	public boolean quitChecker(String currentInput)
 	{
+		 
+		if(currentInput.equals("quit"))
+		{
+			
+		}
 		return false;
 	}
 }
