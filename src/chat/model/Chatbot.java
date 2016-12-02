@@ -47,6 +47,7 @@ public class Chatbot
 	}
 	private void buildMemesList()
 	{
+	//fills list of memes
 	memesList.add("boi");
 	memesList.add("doge");
 	memesList.add("doggo");
@@ -70,7 +71,7 @@ public class Chatbot
 	
 	private void buildPoliticalTopicsList()
 	{
-	
+	//fills list of political topics
 	politicalTopicList.add("Democrat");
 	politicalTopicList.add("Republican");
 	politicalTopicList.add("11/4/16");
@@ -218,17 +219,16 @@ public class Chatbot
 
 	public boolean inputHTMLChecker(String currentInput)
 	{
-		boolean hasHTML=false;
-		
-		for (int index = 0; index< HTMLList.size(); index++)
+		boolean htmlCheck = false;
+		if(currentInput.contains("<P>"))
 		{
-			String memes=(memesList.get(index));
-			if (currentInput.contains(memes.toLowerCase()))
-				{
-				hasHTML=true;
-				}
+			htmlCheck = true;
 		}
-		return hasHTML;
+		else if(currentInput.contains ("<A HREF=\""))
+		{
+			
+		}
+		return htmlCheck;
 	}
 
 	public boolean twitterChecker(String string)
