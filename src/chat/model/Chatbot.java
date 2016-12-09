@@ -226,7 +226,37 @@ public class Chatbot
 		}
 		else if(currentInput.contains ("<A HREF=\""))
 		{
+			int index = currentInput.indexOf("<A HREF=\"") + 9;
+			String sub = currentInput.substring(index);
 			
+			if(sub.contains("\">"))
+			{
+				int index2 = sub.indexOf("\">");
+				String sub2 = sub.substring(index2);
+				
+				if(sub2.contains(" </a>"))
+				{
+					htmlCheck = true;
+				}
+			}
+		}
+		else if(currentInput.contains("<"))
+		{
+			String lower = currentInput.toLowerCase();
+			int openIndex1 = lower.indexOf("<") +1;
+			String tag = "";
+			if(lower.contains(">"))
+			{
+				int openIndex2 = lower.indexOf(">");
+				tag= lower.substring(openIndex1, openIndex1);
+				
+				String sub = lower.substring(openIndex2 +1);
+				
+				if(sub.contains("</" + tag + ">"))
+				{
+					
+				}
+			}
 		}
 		return htmlCheck;
 	}
