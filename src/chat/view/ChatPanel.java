@@ -9,7 +9,6 @@ public class ChatPanel extends JPanel
 
 	private ChatController baseController;
 	private SpringLayout baseLayout;
-	private SpringLayout baseLayout_1;
 	private JTextArea chatDisplay;
 	private JButton chatButton;
 	private JTextField chatField;
@@ -18,7 +17,7 @@ public class ChatPanel extends JPanel
 		super();
 		this.baseController =baseController;
 		this.baseLayout = new SpringLayout();
-		baseLayout_1 = new SpringLayout();
+		baseLayout = new SpringLayout();
 		chatDisplay = new JTextArea(5,25);
 
 		chatField = new JTextField(25);
@@ -40,7 +39,7 @@ public class ChatPanel extends JPanel
 	}
 	private void setupPanel()
 	{
-		this.setLayout(baseLayout_1);
+		this.setLayout(baseLayout);
 		this.setBackground(Color.GREEN);
 		this.add(chatDisplay);
 		this.add(chatButton);
@@ -48,12 +47,12 @@ public class ChatPanel extends JPanel
 	}
 	private void setupLayout()
 	{
-		baseLayout_1.putConstraint(SpringLayout.NORTH, chatButton, 39, SpringLayout.SOUTH, chatField);
-		baseLayout_1.putConstraint(SpringLayout.WEST, chatButton, 148, SpringLayout.WEST, this);
-		baseLayout_1.putConstraint(SpringLayout.NORTH, chatField, 20, SpringLayout.SOUTH, chatDisplay);
-		baseLayout_1.putConstraint(SpringLayout.WEST, chatField, 68, SpringLayout.WEST, this);
-		baseLayout_1.putConstraint(SpringLayout.NORTH, chatDisplay, 36, SpringLayout.NORTH, this);
-		baseLayout_1.putConstraint(SpringLayout.WEST, chatDisplay, 75, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, chatButton, 39, SpringLayout.SOUTH, chatField);
+		baseLayout.putConstraint(SpringLayout.WEST, chatButton, 148, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, chatField, 20, SpringLayout.SOUTH, chatDisplay);
+		baseLayout.putConstraint(SpringLayout.WEST, chatField, 68, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, chatDisplay, 36, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, chatDisplay, 75, SpringLayout.WEST, this);
 	}
 	private void setupListeners()
 	{
