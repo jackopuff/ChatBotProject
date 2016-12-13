@@ -30,20 +30,8 @@ public class Chatbot
 		this.content = new String("boi");
 		this.politicalTopicList = new ArrayList<String>();
 		this.HTMLList = new ArrayList<String>();
-		this.buildHTMLList();
 		this.buildMemesList();
 		buildPoliticalTopicsList();
-	}
-	private void buildHTMLList()
-	{
-		HTMLList.add("<>");
-		HTMLList.add("< >");
-		HTMLList.add("<B>  </B>");
-		HTMLList.add("<B>  ");
-		HTMLList.add("<I> sdadas </i>");
-		HTMLList.add("<P>");
-		HTMLList.add("<A HREF=\"sdfs.html\"> </a>");
-		HTMLList.add("<A HREF> </a>");
 	}
 	private void buildMemesList()
 	{
@@ -173,7 +161,7 @@ public class Chatbot
 	 */
 	public String getUserName()
 	{
-		return null;
+		return userName;
 	}
 	
 	/**
@@ -212,9 +200,14 @@ public class Chatbot
 		
 	}
 
-	public boolean keyboardMashChecker(String string)
+	public boolean keyboardMashChecker(String mashing)
 	{
-		return false;
+		boolean hasKeyboardMash = false;
+		if(mashing.contains(mashing))
+		{
+			hasKeyboardMash=true;
+		}
+		return hasKeyboardMash;
 	}
 
 	public boolean inputHTMLChecker(String currentInput)
@@ -254,25 +247,32 @@ public class Chatbot
 				
 				if(sub.contains("</" + tag + ">"))
 				{
-					
+					htmlCheck = true;
 				}
 			}
 		}
 		return htmlCheck;
 	}
 
-	public boolean twitterChecker(String string)
+	public boolean twitterChecker(String currentInput)
 	{
-		return false;
+		boolean twitterbool = false;
+		String trimmed = currentInput.replaceAll(" ", "");
+		if(trimmed.length() >1 && !currentInput.startsWith(" "))
+		{
+			twitterbool = true;
+		}
+		return twitterbool;
 	}
 
 	public boolean quitChecker(String currentInput)
 	{
+		boolean didquit = false;
 		 
-		if(currentInput.equals("quit"))
+		if(currentInput.equalsIgnoreCase("quit"))
 		{
-			
+			didquit = true;
 		}
-		return false;
+		return didquit;
 	}
 }
