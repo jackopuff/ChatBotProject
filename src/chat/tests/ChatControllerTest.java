@@ -2,6 +2,7 @@ package chat.tests;
 
 import static org.junit.Assert.*;
 
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,6 +10,7 @@ import org.junit.Test;
 import chat.controller.ChatController;
 import chat.model.Chatbot;
 import chat.view.ChatPanel;
+import chat.view.ChatFrame;
 
 public class ChatControllerTest
 {
@@ -30,7 +32,7 @@ public class ChatControllerTest
 	public void testChatController()
 	{
 		assertNotNull("GUI Frame not installed",testController.getBaseFrame());
-		assertTrue("Incorrect display data type", testController.getBaseFrame() instanceof ChatPanel);
+		assertTrue("Incorrect display data type", testController.getBaseFrame() instanceof ChatFrame);
 		assertNotNull("Chatbot not initialized", testController.getChatbot());
 		assertTrue("Incorrect data type", testController.getChatbot() instanceof Chatbot);
 	}
