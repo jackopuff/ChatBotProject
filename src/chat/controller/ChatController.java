@@ -7,31 +7,27 @@ public class ChatController
 {
 		private Chatbot stupidBot;
 		private ChatViewer chatView;
-		private ChatPanel appFrame;
+		private ChatFrame ChatFrame;
 		private ChatFrame baseFrame;
 		public ChatController()
 		{
-			this.appFrame = new ChatPanel(this);
+			ChatFrame = new ChatFrame(this);
 			stupidBot = new Chatbot("Andoo Slimer");
 			chatView = new ChatViewer();
 		}
 		
 		public void start()
 		{
-			String response = chatView.collectResponse("What do you want to talk about today?");
-			
-			while(stupidBot.lengthChecker(response))
-			{
-				chatView.displayMessage(useChatbotCheckers(response));
-				response = chatView.collectResponse("Oh, you are interested in "+response);
-			}
+			chatView.displayMessage("Welcome to ChatBot!");
+			ChatFrame.getChatPanel().showMessage(stupidBot.getUserName() + "says: Welcome!");
 		}
+		
 		public String useChatbotCheckers(String input)
 		{
 			String answer= "";
-			if(!stupidBot.quitChecker(input))
+
+			if(stupidBot.quitChecker(input))
 			{
-				answer = "goodbye!";
 				System.exit(0);
 			}
 			if(stupidBot.contentChecker(input))
@@ -66,10 +62,6 @@ public class ChatController
 			if (canBeRandom % 7 == 0)
 			{
 				answer += randomTopicGenerator();
-			}
-			else
-			{
-				chatView.displayMessage("Thank you for chatting with me :D");
 			}
 			return answer;		
 		}
