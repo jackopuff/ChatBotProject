@@ -17,7 +17,6 @@ public class ChatFrameTest
 	{
 		baseFrame = new ChatPanel(new ChatController());
 	}
-
 	@After
 	public void tearDown() throws Exception
 	{
@@ -37,6 +36,9 @@ public class ChatFrameTest
 		assertNotEquals("Title not specified", baseFrame.getTitle(), "");
 		assertTrue("Frame visibility incorrectly set",baseFrame.isVisible());
 		assertTrue("Incorrect base panel type",baseFrame.getContentPane() instanceof ChatPanel);
+	}
+		// TODO Auto-generated method stub
+		
 	}
 
 }
