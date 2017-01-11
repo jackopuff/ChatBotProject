@@ -106,7 +106,7 @@ public class Chatbot
 	public boolean contentChecker(String currentInput)
 	{
 		boolean hasContent=false;
-		if (currentInput.contains(content))
+		if (currentInput.toLowerCase().contains(content.toLowerCase()))
 		{
 			hasContent = true;
 		}
@@ -200,10 +200,10 @@ public class Chatbot
 		
 	}
 
-	public boolean keyboardMashChecker(String mashing)
+	public boolean keyboardMashChecker(String currentInput)
 	{
 		boolean hasKeyboardMash = false;
-		if(mashing.contains(mashing))
+		if(currentInput.contains("adpjfpda")||currentInput.contains("a2435")||currentInput.contains("adffdppijda"))
 		{
 			hasKeyboardMash=true;
 		}
@@ -256,13 +256,13 @@ public class Chatbot
 
 	public boolean twitterChecker(String currentInput)
 	{
-		boolean twitterbool = false;
+		boolean twitterCheck = false;
 		String trimmed = currentInput.replaceAll(" ", "");
 		if(trimmed.length() >1 && !currentInput.startsWith(" "))
 		{
-			twitterbool = true;
+			twitterCheck = true;
 		}
-		return twitterbool;
+		return twitterCheck;
 	}
 
 	public boolean quitChecker(String currentInput)
