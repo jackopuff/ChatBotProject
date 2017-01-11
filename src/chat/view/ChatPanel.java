@@ -54,6 +54,10 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.NORTH, chatDisplay, 36, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, chatDisplay, 75, SpringLayout.WEST, this);
 	}
+	public void showMessage (String message)
+	{
+		chatDisplay.setText(message);
+	}
 	private void setupListeners()
 	{
 		chatButton.addActionListener(new ActionListener()
@@ -67,6 +71,14 @@ public class ChatPanel extends JPanel
 				chatField.setText("");
 			}
 		});
+	}
+	public void getTitle()
+	{
+		
+	}
+	public void getContentPane()
+	{
+		
 	}
 	
 }
