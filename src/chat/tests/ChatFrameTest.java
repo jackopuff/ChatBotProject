@@ -2,6 +2,7 @@ package chat.tests;
 
 import static org.junit.Assert.*;
 
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -38,7 +39,5 @@ public class ChatFrameTest
 		assertTrue("Incorrect base panel type",baseFrame.getContentPane() instanceof ChatPanel);
 	}
 		// TODO Auto-generated method stub
-		
-	}
 
 }

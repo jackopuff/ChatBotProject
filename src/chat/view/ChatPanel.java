@@ -4,12 +4,18 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import chat.controller.ChatController;
+import chat.controller.FileController;
 public class ChatPanel extends JPanel
 {
 
+	private ChatPanel ChatPanel;
 	private ChatController baseController;
 	private SpringLayout baseLayout;
 	private JTextArea chatDisplay;
+	private JButton twitterButton;
+	private JButton tweetButton;
+	private JButton saveButton;
+	private JButton loadButton;
 	private JButton chatButton;
 	private JTextField chatField;
 	public ChatPanel(ChatController baseController)
@@ -23,6 +29,10 @@ public class ChatPanel extends JPanel
 		chatField = new JTextField(25);
 
 		chatButton = new JButton("Chat with the bot");
+		twitterButton = new JButton("search twitter");
+		tweetButton = new JButton("send a tweet");
+		saveButton = new JButton("save");
+		loadButton = new JButton("load");
 
 		setupPanel();
 		setupLayout();
@@ -71,14 +81,33 @@ public class ChatPanel extends JPanel
 				chatField.setText("");
 			}
 		});
+		saveButton.addActionListener(new ActionListener()
+				{
+				public void actionPerformed(ActionEvent click)
+				{
+					String fileName = chatField.getText();
+					
+					FileController.saveFile(baseController, fileName.trim(),chatDisplay.getText());
+				}
+				});
+		tweetButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+			}
+			
+		});
+		twitterButton.addActionListener(new ActionListener()
+				{
+					public void actionPerformed(ActionEvent click)
+					{
+						String username = chatField.getText();
+						chatDisplay.append(baseController.searchTwitter(username));
+					}
+			
+				});
 	}
-	public void getTitle()
-	{
-		
-	}
-	public void getContentPane()
-	{
-		
-	}
+
 	
 }

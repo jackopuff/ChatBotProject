@@ -1,5 +1,6 @@
 package chat.controller;
 import chat.view.*;
+import chat.model.CTEC;
 import chat.view.ChatPanel;
 import chat.model.Chatbot;
 import chat.view.ChatViewer;
@@ -9,10 +10,12 @@ public class ChatController
 		private ChatViewer chatView;
 		private ChatFrame ChatFrame;
 		private ChatFrame baseFrame;
+		private CTEC tweetBot;
 		public ChatController()
 		{
 			ChatFrame = new ChatFrame(this);
 			stupidBot = new Chatbot("Andoo Slimer");
+			tweetBot = new CTEC(this);
 			chatView = new ChatViewer();
 		}
 		
@@ -90,6 +93,11 @@ public class ChatController
 			}
 			return randomTopic;
 		}
+		
+		public ChatViewer getPopup()
+		{
+			return chatView;
+		}
 
 		public ChatFrame getBaseFrame() 
 		{
@@ -100,4 +108,23 @@ public class ChatController
 		{
 			return this.stupidBot;
 		}
+		public void useTwitter(String text)
+		{
+			tweetBot.sendTweet(text);
+		}
+		
+		public void handleErrors(Exception currentException)
+		{
+			chatView.displayMessage("There has been an error. The newxt window will provide details");
+			chatView.displayMessage(currentException.getMessage());
+		}
+		public String searchTwitter(String name)
+		{
+			String results = "The top word from user: " + name  + " is: ";
+			results +=tweetBot.getMostPopularWord(name);
+			
+			return results;
+		}
 }
+
+	

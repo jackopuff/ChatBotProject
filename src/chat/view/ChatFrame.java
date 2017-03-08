@@ -27,4 +27,13 @@ public class ChatFrame extends JFrame
 	{
 		return this.ChatPanel;
 	}
+	public String getTitle()
+	{
+		String title = "ChatBot";
+		return title;
+	}
+	public ChatPanel getContentPane()
+	{
+		return this.ChatPanel;
+	}
 }
