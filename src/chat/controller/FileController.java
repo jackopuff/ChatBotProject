@@ -51,6 +51,10 @@ public class FileController
 		{
 			baseController.handleErrors(someIOError);
 		}
-		catch(NullPointerException)
+		catch(NullPointerException NullError)
+		{
+			baseController.handleErrors(NullError);
+		}
+		return fileContents;
 	}
 }

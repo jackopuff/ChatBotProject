@@ -22,7 +22,7 @@ public class ChatController
 		public void start()
 		{
 			chatView.displayMessage("Welcome to ChatBot!");
-			ChatFrame.getChatPanel().showMessage(stupidBot.getUserName() + "says: Welcome!");
+			ChatFrame.getChatPanel().showMessage(stupidBot.getUserName() + " says: Welcome!");
 		}
 		
 		public String useChatbotCheckers(String input)
