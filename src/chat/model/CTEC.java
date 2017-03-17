@@ -69,6 +69,51 @@ public class CTEC
 		
 		return results;
 	}
+	private void removeEmptyText()
+	{
+		for(int index = tweetedWords.size() - 1; index >=0; index--)
+		{
+			
+			
+		}
+		
+	}
+	private String removePunctuation(String currentString)
+	{
+		String punctuation = ".,?!:;\"){}^[]<>-";
+		
+		String scrubbedString = "";
+		for(int i = 0; i < currentString.length(); i++)
+		{
+			
+			if(punctuation.indexOf(currentString.charAt(i)) == -1)
+			{
+				scrubbedString += currentString.charAt(i);
+			}
+		}
+		return scrubbedString;
+	}
+	
+	private String calculatePopularWordCount()
+	{
+		String information = "";
+		String mostPopular ="";
+		int popularIndex =-1;
+		int popularCount = 0;
+		
+		for(int index = 0; index < tweetedWords.size(); index++)
+		{
+			int currentPopularity = 0;
+			for(int searched = index + 1; searched < tweetedWords.size(); searched++)
+			{
+				if(tweetedWords.get(index).equalsIgnoreCase(tweetedWords.get(searched)) && !tweetedWords.get(index).equals(mostPopular))
+				{
+					
+				}
+			}
+		}
+		return information;
+	}
 	private String [] createIgnoredWordArray()
 	{
 		String[] boringWords;
@@ -120,7 +165,7 @@ public class CTEC
 		removeBlankWords();
 		turnTweetsToWords();
 		removeBoringWords();
-		String information = "The tweetcount is "
+		String information = "The tweetcount is ";
 		return information;
 	}
 	private void removeBoringWords()
